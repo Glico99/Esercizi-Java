@@ -26,7 +26,7 @@ public class ChatServer {
     }
 }
 
-
+//La classe ClientHandler gestisce le operazioni da eseguire per ogni Thread
 class ClientHandler implements Runnable {
     private Socket clientSocket;
     private List<ClientHandler> clients;
@@ -39,7 +39,8 @@ class ClientHandler implements Runnable {
         this.out = new PrintWriter(clientSocket.getOutputStream(), true);
         this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
     }
-
+    //Il metodo run() è un metodo astratto dell'interfaccia Runnable quindi è necessario definirne il corpo
+    //All'interno del metodo è presente un esempio dell'utilizzo della sintassi try/catch/finally
     public void run(){
         try{
             String inputLine;
