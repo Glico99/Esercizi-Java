@@ -6,7 +6,7 @@ L'app è costituita da 4 file:
 - `ChatClientGUI`: Crea una semplice GUI utilizzando le librerie standard
 - `App`: Permette l'esecuzione del client
 
-##Utilizzo
+## Utilizzo
 
 - `Avvia il server eseguendo il file ChatServer.java`
 - `Avvia l'app tramite il file App.java`
