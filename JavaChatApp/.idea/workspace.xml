@@ -4,37 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7df31c12-2337-4a9c-a158-d0c1c31f4f22" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../provaclassi/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/com/classi/Calcolatrice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/com/classi/Cerchio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/com/classi/Contatore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/com/classi/Libro.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/com/classi/Macchina.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaclassi/src/com/classi/Persona.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/src/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/src/com/classi/Animale.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/src/com/classi/Cane.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/src/com/classi/FiguraGeometrica.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/src/com/classi/Gatto.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provaereditarietà/src/com/classi/Quadrato.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provamodificatori/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provamodificatori/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provamodificatori/src/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provamodificatori/src/com/modificatori/ContoBanca.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../provamodificatori/src/com/modificatori/Persona.java" beforeDir="false" />
-    </list>
+    <list default="true" id="7df31c12-2337-4a9c-a158-d0c1c31f4f22" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
@@ -49,11 +23,10 @@
     &quot;Application.App.executor&quot;: &quot;Run&quot;,
     &quot;Application.ChatServer.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/emanu/projects/JavaChatApp2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
 }</component>
   <component name="RunManager" selected="Application.App">
@@ -79,8 +52,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ChatServer" />
         <item itemvalue="Application.App" />
+        <item itemvalue="Application.ChatServer" />
       </list>
     </recent_temporary>
   </component>
@@ -94,16 +67,5 @@
       <updated>1721728833462</updated>
     </task>
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

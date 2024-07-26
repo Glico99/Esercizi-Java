@@ -1,14 +1,18 @@
-## Java Chat App
+## Getting Started
 
-Una semplice app di scambio messaggi in una connessione "two-way" tra due endpoint(Socket).
-L'app inoltre implementa una semplice GUI tramite Jframe.
+Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-##Utilizzo
-Il server va avviato eseguendo il file ChatServer.java contenuta nel pacchetto com.chatapp;
-L'app può essere avviata tramite il file App.java.
+## Folder Structure
 
-## Struttura Cartelle
+The workspace contains two folders by default, where:
 
-- `src`: contiene i files relativi all'app
-- `lib`: librerie Java standard
-- `bin`: files di output compilati(binaries)
+- `src`: the folder to maintain sources
+- `lib`: the folder to maintain dependencies
+
+Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+
+> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+
+## Dependency Management
+
+The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
