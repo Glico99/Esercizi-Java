@@ -7,6 +7,7 @@ L'app è costituita da 4 file:
 -`App`: Permette l'esecuzione del client
 
 ##Utilizzo
+
 -`Avvia il server eseguendo il file ChatServer.java`
 -`Avvia l'app tramite il file App.java`
 
