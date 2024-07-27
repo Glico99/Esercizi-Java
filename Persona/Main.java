@@ -1,5 +1,3 @@
-package Persona;
-
 import java.util.Scanner;
 
 /**

@@ -1,5 +1,3 @@
-package Persona;
-
 public class Calcolatrice {
 
     public double somma(double a,double b){

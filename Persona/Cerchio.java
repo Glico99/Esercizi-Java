@@ -1,5 +1,3 @@
-package Persona;
-
 public class Cerchio {
     private double PI = 3.1415926535897932384626433832;
 
