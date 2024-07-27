@@ -13,6 +13,7 @@ public class GreetServer {
         out = new PrintWriter(clientSocket.getOutputStream(),true);
         in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
         String greeting = in.readLine();
+        System.out.println(greeting);
         if(greeting.equals("hello server")){
             out.println("hello client");
         }else{
