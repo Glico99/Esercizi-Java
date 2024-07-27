@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ChatClientGUI extends JFrame {
     private JTextArea messageArea;
@@ -20,6 +22,9 @@ public class ChatClientGUI extends JFrame {
         setSize(400,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        String name = JOptionPane.showInputDialog(this, "Enter your name: ", "Name Entry", JOptionPane.PLAIN_MESSAGE);
+        this.setTitle("Java application " + name);
+
         messageArea = new JTextArea();
         messageArea.setEditable(false);
         add(new JScrollPane(messageArea), BorderLayout.CENTER);
@@ -27,12 +32,14 @@ public class ChatClientGUI extends JFrame {
         textField = new JTextField();
         textField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                client.sendMessage(textField.getText());
+                String message = "[" + new SimpleDateFormat("HH:MM:SS").format(new Date()) + "]" + name + ": " + textField.getText();
+                client.sendMessage(message);
                 textField.setText("");
             }
         });
         add(textField, BorderLayout.SOUTH);
 
+        
         try{
             this.client = new ChatClient("127.0.0.1", 5000, this::onMessageReceived);
             client.startClient();
