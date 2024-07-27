@@ -52,7 +52,7 @@ class ClientHandler implements Runnable {
                 }
             }
         }catch(IOException e){
-            System.out.println("Errore I/O: " + e.getMessage());
+            System.out.println("Messaggio i/o: " + e.getMessage());
         }finally{
             try{
                 in.close();
