@@ -1,6 +1,8 @@
 package com.chatapp;
 
 import java.net.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.function.Consumer;
 import java.io.*;
 
@@ -22,8 +24,12 @@ public class ChatClient {
        this.onMessageReceived = onMessageReceived;
     }
     
-    public void sendMessage(String msg) {
-        out.println(msg);
+    public void sendMessage(String name , String text) {
+        out.println("[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "]" + name + ": " + text);
+    }
+
+    public void chatLeftMsg(String name){
+        out.println(name + " ha lasciato la chat");
     }
 
     public void startClient(){
@@ -32,7 +38,6 @@ public class ChatClient {
                 String line;
                 while((line = in.readLine()) != null){
                     onMessageReceived.accept(line);
-
                 }
             }catch(IOException e){
                 e.printStackTrace();

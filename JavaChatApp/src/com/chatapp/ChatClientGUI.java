@@ -4,13 +4,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class ChatClientGUI extends JFrame {
     private JTextArea messageArea;
     private JTextField textField;
     private JButton exitButton;
+    private JButton sendButton;
     private ChatClient client;
 
     //In questo caso la keyword super() è utilizzata per richiamare il super-costruttore della classe JFrame, ed accetta un titolo come argomento
@@ -19,19 +18,22 @@ public class ChatClientGUI extends JFrame {
     //La sintassi try/catch viene utilizzata per creare un nuovo Socket client, sfruttando la classe ChatClient
     //Il metodo onMessageReceived è utilizzato per aggiungere i messaggi degli altri utenti all messageArea quando vengono ricevuti dal client
     public ChatClientGUI(){
-        super("Chat Application");
+        super("Java Chat App");
         setSize(400,500);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        String name = JOptionPane.showInputDialog(this, "Enter your name: ", "Name Entry", JOptionPane.PLAIN_MESSAGE);
-        this.setTitle("Java application " + name);
+        //Finestra inserimento nome
+        String name = JOptionPane.showInputDialog(this, "Inserisci il tuo nome: ", "Scelta nome", JOptionPane.PLAIN_MESSAGE);
+        this.setTitle("Java Chat App - " + name);
 
+        //Creazione palette colori e font
         Color backgroundColor = new Color(240,240,240);
         Color buttonColor = new Color(75,75,75);
         Color textColor = new Color(50,50,50);
         Font textFont = new Font("Arial",Font.PLAIN,14);
         Font buttonFont = new Font("Arial",Font.BOLD,12);
 
+        //Layout e posizione dell'area dove vengono visualizzai i messaggi
         messageArea = new JTextArea();
         messageArea.setBackground(backgroundColor);
         messageArea.setForeground(textColor);
@@ -39,26 +41,36 @@ public class ChatClientGUI extends JFrame {
         messageArea.setEditable(false);
         add(new JScrollPane(messageArea), BorderLayout.CENTER);
 
+        //Campo per inviare il messaggio
         textField = new JTextField();
         textField.setBackground(backgroundColor);
         textField.setForeground(textColor);
         textField.setFont(textFont);
         textField.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
-                String message = "[" + new SimpleDateFormat("HH:mm:ss").format(new Date()) + "]" + name + ": " + textField.getText();
-                client.sendMessage(message);
+                client.sendMessage(name, textField.getText());
                 textField.setText("");
             }
         });
 
-        exitButton = new JButton("exit");
+        //Tasto invia
+        sendButton = new JButton("Invia");
+        sendButton.setBackground(backgroundColor);
+        sendButton.setForeground(textColor);
+        sendButton.setFont(buttonFont);
+        sendButton.addActionListener(e -> {
+            client.sendMessage(name,textField.getText());
+            textField.setText("");
+        });
+
+        //Tasto d'uscita
+        exitButton = new JButton("Esci");
         exitButton.setBackground(buttonColor);
         exitButton.setForeground(Color.white);
         exitButton.setFont(buttonFont);
         exitButton.addActionListener(e -> System.exit(0));
         exitButton.addActionListener(e ->{
-            String closeMsg = name + "has left the chat";
-            client.sendMessage(closeMsg);
+            client.chatLeftMsg(name);
             try{
                 Thread.sleep(700);
             }catch(InterruptedException ie){
@@ -66,14 +78,17 @@ public class ChatClientGUI extends JFrame {
             }
         });
 
+        //Layout e posizione del pannello inferiore
         JPanel bottomPanel = new JPanel(new BorderLayout());
         bottomPanel.setBackground(backgroundColor);
         bottomPanel.setForeground(textColor);
         bottomPanel.setFont(textFont);
         bottomPanel.add(textField, BorderLayout.CENTER);
-        bottomPanel.add(exitButton, BorderLayout.EAST);
+        bottomPanel.add(sendButton,BorderLayout.EAST);
+        bottomPanel.add(exitButton, BorderLayout.WEST);
         add(bottomPanel, BorderLayout.SOUTH);
 
+        //Connessione al server
         try{
             this.client = new ChatClient("127.0.0.1", 5000, this::onMessageReceived);
             client.startClient();
@@ -84,6 +99,7 @@ public class ChatClientGUI extends JFrame {
         }
     }
     
+    //Metodo per mostrare i messaggi degli altri utenti nell'area messaggi
     private void onMessageReceived(String message) {
         SwingUtilities.invokeLater(() -> messageArea.append(message + "\n"));
     }

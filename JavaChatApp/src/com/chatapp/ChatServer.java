@@ -44,9 +44,9 @@ class ClientHandler implements Runnable {
     public void run(){
         try{
             String inputLine;
-            //salva il messaggio inserito dal client e lo trasmette a tutti i client
+            //trasmette ogni messaggio ricevuto a tutti i clients
             while((inputLine = in.readLine()) != null){
-                //per ogni elemento della lista clients mostra il messaggio appena inviato
+                //invia il messaggio a tutti i clients
                 for(ClientHandler aClient : clients){
                     aClient.out.println(inputLine);
                 }
