@@ -55,6 +55,7 @@ public class ChatClientGUI extends JFrame {
         textField.setForeground(textColor);
         textField.setFont(textFont);
         textField.addActionListener(new ActionListener() {
+            @Override
             public void actionPerformed(ActionEvent e){
                 client.sendMessage(name, textField.getText());
                 textField.setText("");
