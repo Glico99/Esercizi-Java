@@ -16,7 +16,8 @@ public class ChatClient {
     private PrintWriter out = null;
     private BufferedReader in = null;
     private Consumer<String> onMessageReceived;
-
+    
+    //Molto interessante l'utilizzo dell'interfaccia funzionale Consumer, che ci permette di passare un metodo come parametro
     public ChatClient(String serverAddress, int serverPort, Consumer<String> onMessageReceived) throws IOException {
        this.socket = new Socket(serverAddress,serverPort);
        this.out = new PrintWriter(socket.getOutputStream(), true);

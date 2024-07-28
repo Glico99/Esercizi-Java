@@ -100,6 +100,7 @@ public class ChatClientGUI extends JFrame {
     }
     
     //Metodo per mostrare i messaggi degli altri utenti nell'area messaggi
+    //viene passato al client come parametro grazie all'interfaccia funzionale Consumer
     private void onMessageReceived(String message) {
         SwingUtilities.invokeLater(() -> messageArea.append(message + "\n"));
     }
