@@ -19,12 +19,20 @@ public class ChatClientGUI extends JFrame {
     //Il metodo onMessageReceived è utilizzato per aggiungere i messaggi degli altri utenti all messageArea quando vengono ricevuti dal client
     public ChatClientGUI(){
         super("Java Chat App");
-        setSize(400,500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         //Finestra inserimento nome
         String name = JOptionPane.showInputDialog(this, "Inserisci il tuo nome: ", "Scelta nome", JOptionPane.PLAIN_MESSAGE);
         this.setTitle("Java Chat App - " + name);
+
+        //Finestra della chat
+        setSize(400, 500);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent event){
+                client.chatLeftMsg(name);
+                setDefaultCloseOperation(EXIT_ON_CLOSE);
+            }
+        });
 
         //Creazione palette colori e font
         Color backgroundColor = new Color(240,240,240);
