@@ -1,10 +1,10 @@
 package com.chatapp;
 
+import java.io.*;
 import java.net.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.function.Consumer;
-import java.io.*;
 
 
 //Il costruttore viene utilizzato solo per definire i campi della classe,
@@ -31,6 +31,10 @@ public class ChatClient {
 
     public void chatLeftMsg(String name){
         out.println(name + " ha lasciato la chat");
+    }
+
+    public void usrJoinedMsg(String name){
+        out.println(name + " si è unito");
     }
 
     public void startClient(){
