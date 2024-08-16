@@ -54,12 +54,9 @@ public class ChatClientGUI extends JFrame {
         textField.setBackground(backgroundColor);
         textField.setForeground(textColor);
         textField.setFont(textFont);
-        textField.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e){
+        textField.addActionListener(e->{
                 client.sendMessage(name, textField.getText());
                 textField.setText("");
-            }
         });
 
         //Tasto invia
